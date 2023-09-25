@@ -1,30 +1,28 @@
 "use client";
 // next imports
-
 import { useEffect, useState } from "react";
-import {useRouter} from 'next/navigation'
+import { useRouter } from "next/navigation";
 // import * as React from 'react';
+
+// css file import
+import "./signup.css";
 
 // material imports
 import { Autocomplete, TextField } from "@mui/material";
 import Grid from "@mui/material/Grid";
-// import Box from '@mui/material/Box';
 import Card from "@mui/material/Card";
-// import CardActions from '@mui/material/CardActions';
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
-import "./signup.css"; // Import your CSS file
 import { DatePicker } from "@mui/x-date-pickers"; // Import DatePicker from @mui/lab
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 export default function Signup() {
+  const router = useRouter();
 
-    const router = useRouter();
-    
-    const navigate = (name:string)=>{
-        router.push("/"+name)
-      }
+  const navigate = (name: string) => {
+    router.push("/" + name);
+  };
   const [date, setDate] = useState<Date | null | undefined>(null);
   return (
     <div>
@@ -62,23 +60,9 @@ export default function Signup() {
                 <Grid item md={1}></Grid>
                 <Grid item md={1}></Grid>
                 <Grid item md={10}>
-                  {/* <TextField
-                  id="outlined-basic"
-                  label="Date of birth"
-                  variant="outlined"
-                  className="signup-textfield"
-                  required
-                /> */}
                   <DatePicker
-                    // selected={date}
-                    // showYearDropdown
                     label="date of birth"
                     className="signup-textfield"
-                    // showMonthDropdown
-                    // placeholderText="MM-DD-YYYY"
-                    // customInput={<CustomInput />}
-                    // id="form-layouts-separator-date"
-                    // onChange={(date: Date) => setDate(date)}
                   />
                 </Grid>
                 <Grid item md={1}></Grid>
@@ -121,7 +105,11 @@ export default function Signup() {
                 <Grid item md={1}></Grid>
                 <Grid item md={1}></Grid>
                 <Grid item md={10}>
-                  <Button variant="contained" className="signup-textfield" onClick={()=>navigate("login")}>
+                  <Button
+                    variant="contained"
+                    className="signup-textfield"
+                    onClick={() => navigate("login")}
+                  >
                     Create Account
                   </Button>
                 </Grid>
