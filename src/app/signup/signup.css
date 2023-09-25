@@ -1,0 +1,19 @@
+.signup-card {
+  border: 5px solid #ccc;
+  padding: 1rem;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.card-content {
+  margin: 0 auto;
+  display: flex;
+}
+
+.signup-textfield {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.signup{
+align-content: center;
+}
